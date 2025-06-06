@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dom Wczasowy Alicja - Darłowo</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.1/dist/cdn.min.js" defer></script>
 </head>
 <body class="font-sans text-gray-800">
   <!-- Header -->
@@ -29,14 +30,16 @@
   </section>
 
   <!-- O nas -->
-  <section id="o-nas" class="max-w-5xl mx-auto p-8">
-    <h3 class="text-3xl font-semibold mb-4">O nas</h3>
-    <p>Dom Wczasowy Alicja to idealne miejsce na rodzinny wypoczynek nad Bałtykiem. Znajdujemy się w spokojnej części Darłowa, kilka minut spacerem od plaży.</p>
+  <section id="o-nas" class="max-w-5xl mx-auto p-8" x-data="{ visible: false }" x-intersect.once="visible = true">
+    <div x-show="visible" x-transition>
+      <h3 class="text-3xl font-semibold mb-4">O nas</h3>
+      <p>Dom Wczasowy Alicja to idealne miejsce na rodzinny wypoczynek nad Bałtykiem. Znajdujemy się w spokojnej części Darłowa, kilka minut spacerem od plaży.</p>
+    </div>
   </section>
 
   <!-- Oferta -->
-  <section id="oferta" class="bg-gray-100 p-8">
-    <div class="max-w-5xl mx-auto">
+  <section id="oferta" class="bg-gray-100 p-8" x-data="{ visible: false }" x-intersect.once="visible = true">
+    <div class="max-w-5xl mx-auto" x-show="visible" x-transition>
       <h3 class="text-3xl font-semibold mb-4">Oferta</h3>
       <ul class="list-disc pl-5 space-y-2">
         <li>Pokoje 2, 3 i 4-osobowe z łazienkami</li>
@@ -49,18 +52,20 @@
   </section>
 
   <!-- Galeria -->
-  <section id="galeria" class="max-w-5xl mx-auto p-8">
-    <h3 class="text-3xl font-semibold mb-4">Galeria</h3>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <img src="https://source.unsplash.com/400x300/?baltic-sea,1" class="rounded shadow" alt="Bałtyk 1">
-      <img src="https://source.unsplash.com/400x300/?baltic-sea,2" class="rounded shadow" alt="Bałtyk 2">
-      <img src="https://source.unsplash.com/400x300/?baltic-sea,3" class="rounded shadow" alt="Bałtyk 3">
+  <section id="galeria" class="max-w-5xl mx-auto p-8" x-data="{ visible: false }" x-intersect.once="visible = true">
+    <div x-show="visible" x-transition>
+      <h3 class="text-3xl font-semibold mb-4">Galeria</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <img src="https://source.unsplash.com/400x300/?baltic-sea,1" class="rounded shadow" alt="Bałtyk 1">
+        <img src="https://source.unsplash.com/400x300/?baltic-sea,2" class="rounded shadow" alt="Bałtyk 2">
+        <img src="https://source.unsplash.com/400x300/?baltic-sea,3" class="rounded shadow" alt="Bałtyk 3">
+      </div>
     </div>
   </section>
 
   <!-- Kontakt -->
-  <section id="kontakt" class="bg-blue-900 text-white p-8">
-    <div class="max-w-5xl mx-auto">
+  <section id="kontakt" class="bg-blue-900 text-white p-8" x-data="{ visible: false }" x-intersect.once="visible = true">
+    <div class="max-w-5xl mx-auto" x-show="visible" x-transition>
       <h3 class="text-3xl font-semibold mb-4">Kontakt</h3>
       <p><strong>Adres:</strong> ul. Maczka 3, 76-150 Darłowo</p>
       <p><strong>Telefon:</strong> <a href="tel:+48123456789" class="underline">+48 123 456 789</a></p>
